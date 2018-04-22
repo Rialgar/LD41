@@ -4,8 +4,12 @@
 	<head>
 		<title>LD 41 - by Rialgar</title>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script src="commonWords.js" async="aync" defer="defer" />
 		<script src="main.js" async="aync" defer="defer" />
+
+		<style type="text/css" id="resizingStyle">
+		</style>
 
 		<style type="text/css">
 			body, html {
@@ -15,22 +19,17 @@
 				width: 100%;
 				height: 100%;
 				background-color: black;
+				color: white;
 			}
 			body {
-				color: white;
 				display: flex;
 				flex-direction: column;
+				background-color: #121212;
 			}
 			table#blocks {
-				border-spacing: 1vmin;
 				width: 100%;
-				height: 50vh;
-				flex-basis: 50vh;
-				flex-grow: 0;
-				flex-shrink: 0;
 			}
 			table#blocks>tr>td {
-				border-radius: 0.3vmin;
 				padding: 0;
 				background-color: white;
 			}
@@ -43,45 +42,37 @@
 				flex-shrink: 1;
 			}
 			div#paddleContainer {
-				height: 7vh;
-				flex-basis: 7vh;
-				flex-grow: 0;
-				flex-shrink: 0;
 				display: flex;
 				flex-direction: row;
-				padding-left: 1vw;
-				padding-right: 1vw;
 				position: relative;
 			}
 
 			div#paddleContainer>div.position {
-				margin-top: 1vh;
-				margin-bottom: 1vh;
-				margin-left: 1vw;
-				margin-right: 1vw;
 				border: 1px solid white;
-				border-radius: 0.5vmin;
 				flex-basis: 0;
 				flex-grow: 1;
 				flex-shrink: 1;
 				text-align: center;
 			}
 			div#paddleContainer>div.position>div {
-				padding-top: 0.9vh;
-				font-size: 2.5vh;
-				border-radius: 2.5vh;
-				height: 4.1vh;
-				width: calc(100% + 4vw);
-				margin-left: -2vw;
 				margin-top: -1px;
 			}
 
 			div#paddleContainer>div.position.active>div {
 				background-color: white;
+				border-radius: 100vh;
 			}
 
 			span.match {
 				color: red;
+			}
+
+			div#ball {
+				position: absolute;
+				background-color: white;
+				transform: translate(-50%, -50%);
+				left: 50vw;
+				top: 60vh;
 			}
 		</style>
 	</head>
@@ -89,5 +80,6 @@
 		<table id="blocks" />
 		<div id="spacer" />
 		<div id="paddleContainer"><div id="paddle" /></div>
+		<div id="ball" />
 	</body>
 </html>
