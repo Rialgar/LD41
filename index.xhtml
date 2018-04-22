@@ -22,6 +22,7 @@
 				color: white;
 			}
 			body {
+				position: absolute;
 				display: flex;
 				flex-direction: column;
 				background-color: #121212;
@@ -31,7 +32,36 @@
 			}
 			table#blocks>tr>td {
 				padding: 0;
-				background-color: white;
+			}
+			table#blocks>tr:nth-child(1)>td {
+				background-color: hsl(0, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(2)>td {
+				background-color: hsl(30, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(3)>td {
+				background-color: hsl(60, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(4)>td {
+				background-color: hsl(90, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(5)>td {
+				background-color: hsl(150, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(6)>td {
+				background-color: hsl(180, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(7)>td {
+				background-color: hsl(210, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(8)>td {
+				background-color: hsl(240, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(9)>td {
+				background-color: hsl(270, 100%, 50%);
+			}
+			table#blocks>tr:nth-child(10)>td {
+				background-color: hsl(330, 100%, 50%);
 			}
 			table#blocks>tr>td.dead {
 				background-color: transparent;
@@ -74,6 +104,52 @@
 				left: 50vw;
 				top: 60vh;
 			}
+
+			svg {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			svg > polyline {
+				opacity: 0.5;
+			}
+			div#alert {
+				position: absolute;
+				border: 3px solid white;
+				border-radius: 5px;
+				background-color: rgba(0,0,0,50%);
+				flex-direction: column;
+				display: none;
+				text-align: center;
+				font-size: 2.5em;
+			}
+			div#alertText {
+				flex-grow: 1;
+				flex-shrink: 1;
+				padding: 15px;
+			}
+			button#alertButton{
+				flex-grow: 0;
+				flex-shrink: 0;
+				background-color: #333;
+				color: white;
+				border-radius: 1em;
+				margin: 0.5em;
+				padding: 1em;
+				font-size: 100%;
+			}
+			button#alertButton:hover{
+				background-color: #555;
+
+			}
+			button#alertButton:focus {
+				outline: none;
+				border-color: gold;
+			}
+			button#alertButton:active{
+				background-color: #777;
+				border-style: inset;
+			}
 		</style>
 	</head>
 	<body>
@@ -81,5 +157,12 @@
 		<div id="spacer" />
 		<div id="paddleContainer"><div id="paddle" /></div>
 		<div id="ball" />
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+		  <polyline id='future' points="" fill="transparent" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+		</svg>
+		<div id="alert">
+			<div id="alertText"></div>
+			<button id="alertButton">OK</button>
+		</div>
 	</body>
 </html>

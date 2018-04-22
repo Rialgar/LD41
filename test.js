@@ -1,10 +1,10 @@
 window.addEventListener('load', () => {
 	const growTime = 30000;
 	const growSteps = 4;
-	const func = (minLength, maxLength, timeSinceGrow, attempts) => minLength + Math.floor((maxLength-minLength + 1) * Math.pow(Math.random(), (2.6*growTime)/(timeSinceGrow + attempts)));
+	const func = (minLength, maxLength, timeSinceGrow, attempts) => minLength + Math.floor((maxLength-minLength + 1) * Math.pow(Math.random(), (3.5*growTime)/(timeSinceGrow + attempts)));
 	const test = timeSinceStart => {
 		minLength = Math.floor(timeSinceStart / growTime);
-		maxLength = minLength + 4;
+		maxLength = minLength + 5;
 		timeSinceGrow = Math.max(1, timeSinceStart % growTime);
 		return func(minLength, maxLength, timeSinceGrow, 0);
 	}
@@ -13,7 +13,8 @@ window.addEventListener('load', () => {
 	canvas.width = 1000;
 	canvas.height = 800;
 
-	const counting_ms = 1000;
+	const timePerPx = (growTime * growSteps) / canvas.width;
+	/*const counting_ms = 1000;
 	const fps = 70;
 	const msPerFrame = 1000 / fps;
 
@@ -23,10 +24,12 @@ window.addEventListener('load', () => {
 		test(growTime/2);
 		count = count+1;
 	}
-	const timePerPx = (growTime * growSteps) / canvas.width;
 	const sampleCountPerFrame = count / counting_ms * msPerFrame;
-	const widthCoveredPerFrame = Math.ceil(msPerFrame / timePerPx);
-	const sampleCount = sampleCountPerFrame / widthCoveredPerFrame;
+	const widthCoveredPerFrame = Math.ceil(10 * msPerFrame / timePerPx);
+	const sampleCount = sampleCountPerFrame / widthCoveredPerFrame;*/
+
+	const sampleCount = 30000;
+	console.log(sampleCount);
 
 	const sample = (x) => {
 		const results = [];
@@ -50,7 +53,7 @@ window.addEventListener('load', () => {
 
 	let startTime = 0;
 	frame = time => {
-		while(x < canvas.width && x * timePerPx < time-startTime){
+		while(x < canvas.width && x * timePerPx < 10 * (time-startTime)){
 			const result = sample(x);
 			ctx.fillStyle = 'white';
 			ctx.fillRect(x, yFromValue(result.avg), 1, 1);
