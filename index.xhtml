@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--(X)HTML5 & CSS3 Polyglot Markup-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+	<head>
+		<title>LD 41 - by Rialgar</title>
+		<meta charset="utf-8" />
+		<script src="commonWords.js" async="aync" defer="defer" />
+		<script src="main.js" async="aync" defer="defer" />
+
+		<style type="text/css">
+			body, html {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				background-color: black;
+			}
+			body {
+				color: white;
+				display: flex;
+				flex-direction: column;
+			}
+			table#blocks {
+				border-spacing: 1vmin;
+				width: 100%;
+				height: 50vh;
+				flex-basis: 50vh;
+				flex-grow: 0;
+				flex-shrink: 0;
+			}
+			table#blocks>tr>td {
+				border-radius: 0.3vmin;
+				padding: 0;
+				background-color: white;
+			}
+			table#blocks>tr>td.dead {
+				background-color: transparent;
+			}
+			div#spacer {
+				flex-basis: 0;
+				flex-grow: 1;
+				flex-shrink: 1;
+			}
+			div#paddleContainer {
+				height: 7vh;
+				flex-basis: 7vh;
+				flex-grow: 0;
+				flex-shrink: 0;
+				display: flex;
+				flex-direction: row;
+				padding-left: 1vw;
+				padding-right: 1vw;
+			}
+
+			div#paddleContainer>div {
+				margin-top: 1vh;
+				margin-bottom: 1vh;
+				margin-left: 1vw;
+				margin-right: 1vw;
+				border: 1px solid white;
+				border-radius: 0.5vmin;
+				flex-basis: 0;
+				flex-grow: 1;
+				flex-shrink: 1;
+				text-align: center;
+				padding-top: 0.9vh;
+				font-size: 2.5vh;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="blocks">
+		</table>
+		<div id="spacer"></div>
+		<div id="paddleContainer"></div>
+	</body>
+</html>
