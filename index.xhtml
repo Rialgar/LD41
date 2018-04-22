@@ -51,9 +51,10 @@
 				flex-direction: row;
 				padding-left: 1vw;
 				padding-right: 1vw;
+				position: relative;
 			}
 
-			div#paddleContainer>div {
+			div#paddleContainer>div.position {
 				margin-top: 1vh;
 				margin-bottom: 1vh;
 				margin-left: 1vw;
@@ -64,15 +65,29 @@
 				flex-grow: 1;
 				flex-shrink: 1;
 				text-align: center;
+			}
+			div#paddleContainer>div.position>div {
 				padding-top: 0.9vh;
 				font-size: 2.5vh;
+				border-radius: 2.5vh;
+				height: 4.1vh;
+				width: calc(100% + 4vw);
+				margin-left: -2vw;
+				margin-top: -1px;
+			}
+
+			div#paddleContainer>div.position.active>div {
+				background-color: white;
+			}
+
+			span.match {
+				color: red;
 			}
 		</style>
 	</head>
 	<body>
-		<table id="blocks">
-		</table>
-		<div id="spacer"></div>
-		<div id="paddleContainer"></div>
+		<table id="blocks" />
+		<div id="spacer" />
+		<div id="paddleContainer"><div id="paddle" /></div>
 	</body>
 </html>
