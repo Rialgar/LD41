@@ -377,7 +377,7 @@ window.addEventListener('load', () => {
 
 	const win = () => {
 		myalert('You won!! Please rate and comment on ldjam.com! Click OK to go there.', () => {
-			window.location.href = "https://ldjam.com/events/ludum-dare/41/$89582";
+			window.location.href = "https://ldjam.com/events/ludum-dare/41/typing-breakout";
 		});
 	}
 
